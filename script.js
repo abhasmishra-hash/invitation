@@ -13,3 +13,27 @@ document.getElementById("countdown").innerHTML=
 days+" Days Left";
 
 },1000);
+
+let music=document.getElementById("music");
+
+let btn=document.getElementById("musicBtn");
+
+btn.onclick=function(){
+
+if(music.paused){
+
+music.play();
+
+btn.innerHTML="Pause Music";
+
+}
+
+else{
+
+music.pause();
+
+btn.innerHTML="Play Music";
+
+}
+
+}
