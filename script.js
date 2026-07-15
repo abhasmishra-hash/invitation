@@ -1,39 +1,27 @@
-let birthday = new Date("July 25, 2026 00:00:00").getTime();
+// Finding the music player
 
-setInterval(function(){
+let music = document.getElementById("music");
 
-let now=new Date().getTime();
+// Finding the button
 
-let distance=birthday-now;
+let button = document.getElementById("musicBtn");
 
-let days=Math.floor(distance/(1000*60*60*24));
+// When button is clicked
 
-document.getElementById("countdown").innerHTML=
+button.onclick = function () {
 
-days+" Days Left";
+    if (music.paused) {
 
-},1000);
+        music.play();
 
-let music=document.getElementById("music");
+        button.innerHTML = "⏸ Pause Music";
 
-let btn=document.getElementById("musicBtn");
+    } else {
 
-btn.onclick=function(){
+        music.pause();
 
-if(music.paused){
+        button.innerHTML = "▶ Play Music";
 
-music.play();
+    }
 
-btn.innerHTML="Pause Music";
-
-}
-
-else{
-
-music.pause();
-
-btn.innerHTML="Play Music";
-
-}
-
-}
+};
